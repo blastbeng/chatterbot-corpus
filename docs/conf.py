@@ -1,28 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+#
 # chatterbot-corpus documentation build configuration file, created by
 # sphinx-quickstart on Wed Aug 16 23:03:03 2017.
 
-import os
-import sys
 import sphinx_rtd_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here.
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+#
+# import os
+# import sys
+# sys.path.insert(0, os.path.abspath('.'))
 
-sys.path.insert(0, os.path.abspath('.'))
+
+# -- General configuration ------------------------------------------------
+
+# If your documentation needs a minimal Sphinx version, state it here.
+#
+# needs_sphinx = '1.0'
 
 # Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = [
-    'sphinx.ext.autodoc',
+# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
+# ones.
+extensions = ['sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
-    'sphinx.ext.viewcode'
-]
+    'sphinx.ext.viewcode']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
-source_suffix = ['.rst', '.md']
+# You can specify multiple suffix as a list of string:
+#
+# source_suffix = ['.rst', '.md']
+source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
@@ -152,6 +165,9 @@ texinfo_documents = [
      author, 'chatterbot-corpus', 'One line description of project.',
      'Miscellaneous'),
 ]
+
+
+
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}

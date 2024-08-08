@@ -3,16 +3,19 @@ language: python
 python:
   - '3.6'
 
+os:
+  - linux
+
 addons:
   apt_packages:
     - pandoc
 
 install:
+  - pip install -r requirements.txt
   - pip install -r dev-requirements.txt
 
 script:
   - flake8
-  - sphinx-build -nW -b html ./docs/ ./build/
   - nosetests
 
 deploy:
@@ -21,4 +24,4 @@ deploy:
   password: $PYPI_PASSWORD
   distributions: "sdist bdist_wheel"
   on:
-      tags: true
+      branch: master
